@@ -2,7 +2,7 @@ import subprocess
 import time
 import matplotlib.pyplot as plt
 
-MAX = 100_000_000_000
+MAX = 10_000_000_000
 MIN = 1000
 
 def rangem(min, max):
