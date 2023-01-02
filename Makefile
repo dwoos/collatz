@@ -1,4 +1,4 @@
-.PHONY: default deps clean
+.PHONY: default deps clean collatzrs
 
 default: times.png
 
@@ -9,9 +9,12 @@ clean:
 deps:
 	pip3 install matplotlib
 
+collatzrs:
+	cd collatzrs && cargo build --release
+
 collatz:
 	gcc -O3 collatz.c -o collatz
 
-times.png: collatz times.py
+times.png: collatz collatzrs times.py
 	python3 times.py
 
